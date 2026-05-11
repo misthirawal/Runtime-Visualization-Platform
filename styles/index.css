@@ -42,4 +42,163 @@ body
 .gradient_text
 {
     background:linear-gradient(90deg, #00f0ff, #0070f3, #8a2be2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#my_canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.app_container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Glassmorphism & Layout Updates */
+.hero_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 8rem;
+    min-height: 80vh;
+    gap: 4rem;
+}
+
+.hero_content {
+    flex: 1;
+    background: rgba(25, 25, 35, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.hero_content p {
+    font-size: 1.2rem;
+    color: #a0a0b0;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.hero_actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.primary_button, .secondary_button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary_button {
+    background: linear-gradient(90deg, #00f0ff, #0070f3);
+    color: white;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 112, 243, 0.5);
+}
+
+.primary_button:hover {
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.8);
+    transform: translateX(2px);
+}
+
+.secondary_button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.secondary_button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(2px);
+}
+
+.hero_graphic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.terminal_card {
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal_header {
+    height: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.terminal_header::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f56;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+}
+
+.terminal_body {
+    padding: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00f0ff;
+    flex: 1;
+}
+
+.features_section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 8rem;
+}
+
+.feature_card {
+    background: rgba(25, 25, 35, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+    border-color: rgba(138, 43, 226, 0.4);
 }
