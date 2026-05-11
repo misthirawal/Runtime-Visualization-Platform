@@ -8,15 +8,54 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/Runtime-Visualization-Platform/assests/favicon_io (4).zip">
     <link rel="icon" type="image/png" sizes="16x16" href="/Runtime-Visualization-Platform/assests/favicon_io (4).zip">
     <link rel="manifest" href="/Runtime-Visualization-Platform/assests/favicon_io (4).zip">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
-<body>
-    <main>
-        <canvas id="my_canvas">
-        </canvas>
+<body class="fade-in">
+        <canvas id="my_canvas"></canvas>
         <div class="app_container">
+            <header id="navigation_container"></header>
+            <main id="page_container">
+                <section class="landing_section">
+                    <section class="hero_section">
+                        <div class="hero_content">
+                            <h1 class="hero-title">Visualize the 
+                                <span class="gradient_text">Runtime</span>
+                            </h1>
+                            <p>An immersive, cinematic operating system environment built to teach JavaScript execution, memory mapping, and system architecture step-by-step.</p>
+                            <div class="hero_actions">
+                                <button class="primary_button">Launch Playground</button>
+                                <button class="secondary_button">Read the Docs</button>
+                        </div>
+                    </div>
+                    <!--right hand side-->
+                    <<div class="hero_graphic">
+                        <div class="terminal_card">
+                            <div class="terminal_header"></div>
+                            <div class="terminal_body">
+                                Runtime Visualization
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="features_section">
 
-        </div>
-    </main>
-    
+                <div class="feature_card">
+                    Stack Visualization
+                </div>
+
+                <div class="feature_card">
+                    Heap Mapping
+                </div>
+
+                <div class="feature_card">
+                    Runtime Flow
+                </div>
+
+            </section>
+
+            </section>
+        </main>
+    <script src="./javascript/index.js"></script>
+</body>
 </body>
 </html>
