@@ -48,4 +48,51 @@ setInterval(()=>
         blink.style.visibility="hidden";
     }
 },500);
- 
+
+//----------------------------------------matrix rain efefct----------------------------------//------------------------
+let canvas=document.getElementById("my_canvas");
+let ctx= canvas.getContext("2d");  //it will return drawing tools for 2d drawing on the canvas so ctx will become an object
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let font_size=16; //1 character-20 px
+const binary = "01";
+//total no of streams(horizontally fill =canvas_width/font_size)
+const no_of_streams=(canvas.width/font_size);
+let arr=[];  //created an array to store the current yth position of each stream
+for(let i=0;i<no_of_streams;i++)
+{
+    arr[i]=Math.random()*canvas.height;//it will store random initial position of each stream to give it a more natural feel
+    
+}
+function draw()
+{
+    ctx.fillStyle="rgba(2, 6, 23, 0.12)";
+    ctx.fillRect(0 ,0 ,canvas.width,canvas.height);
+    ctx.fillStyle="#38bdf8";
+    ctx.font=`${font_size}px monospace`;
+    ctx.shadowColor="#7dd3fc";
+    ctx.shadowBlur = 8;
+    for(let i=0;i<no_of_streams;i++)
+    {
+         const text =
+            binary.charAt(
+                Math.floor(
+                    Math.random() * binary.length
+                )
+            );
+        ctx.fillText(texts,i*16,arr[i]);  //filltext contains (text to display,x position, y position)
+        arr[i]+=font_size;
+        if(arr[i] > canvas.height && Math.random()>0.975)
+        {
+            arr[i] =Math.random()*-200;
+        }
+    }
+
+}
+setInterval(draw,50);
+window.addEventListener("resize", () =>
+{
+    canvas.width = window.innerWidth;
+
+    canvas.height = window.innerHeight;
+});

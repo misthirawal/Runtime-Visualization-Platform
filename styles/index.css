@@ -202,3 +202,36 @@ body
     box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
     border-color: rgba(138, 43, 226, 0.4);
 }
+#blinking_cursor
+{
+    color: cyan;
+}
+.terminal_card:hover{
+    box-shadow: 0 0 30px rgba(19, 220, 220, 0.4);
+    transition: 0.3s;
+};
+.gradient_text
+{
+    background: linear-gradient(90deg,rgb(0, 102, 255),#6a3dd2);
+    background-size: 50px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero_content:hover
+{
+    box-shadow: 0 0 30px rgba(95, 145, 220, 0.5);
+    transition: 0.3s;
+}
+#my_canvas{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    background: #020617;
+}
