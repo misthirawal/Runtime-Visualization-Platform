@@ -1,0 +1,12 @@
+#navigation_container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav_links
+{
+    text-decoration: none;
+    color:white;
+    text-shadow:antiquewhite 2px;
+}
