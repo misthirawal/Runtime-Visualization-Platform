@@ -50,3 +50,51 @@ const samples={
     return n * factorial(n - 1);}
     let f = factorial(3);`
 };
+
+//code to hide placeholder when user start writing in code_editor-------
+const user_typing=document.getElementById("code_editor");
+const placeholder=document.getElementById("editor_placeholder");
+user_typing.addEventListener("input", remove_placeholder);
+function remove_placeholder()
+{
+    if(user_typing.value.length>0)
+    {
+        placeholder.style.display="none";
+    }
+    else{
+        placeholder.style.display="block";
+    }
+}
+///clear button------------------------------
+const click_buton=document.getElementById("clear");
+click_buton.addEventListener("click",remove_text);
+function remove_text()
+{
+    code_editor.value='';
+
+}
+///adding numbering in code_editor
+const line_numbers = document.getElementById("code_editor_numbering");
+user_typing.addEventListener("input", update_lines);
+function update_lines()
+{
+    let lines = user_typing.value.split("\n").length;
+
+    let numbers = "";
+
+    for(let i = 1; i <= lines; i++)
+    {
+        numbers += i + "<br>";
+    }
+
+    line_numbers.innerHTML = numbers;
+}
+update_lines();
+select.addEventListener('change', () =>
+{
+    abc.value = samples[select.value];
+
+    update_lines();
+
+    remove_placeholder();
+});
