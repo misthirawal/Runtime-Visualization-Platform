@@ -1,95 +1,66 @@
-.menu , .menu2{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin: auto;
-}
-/* ---------------- SIDEBAR ---------------- */
 .sidebar
 {
-    width:280px;
-    min-height:100vh;
-    background:rgba(10,10,15,0.92);
-    border-right:1px solid rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    padding:1.5rem 1rem;
-    display:flex;
-    flex-direction:column;
-    justify-content:normal;
+    width: 260px;
+    min-height: 100vh;
+    background: rgba(10,15,25,0.95);
+    border-right: 1px solid rgba(0,229,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
 }
-/* ---------------- SIDEBAR SECTION ---------------- */
 
 .sidebar_section
 {
-    margin-bottom:2.5rem;
+    margin-bottom: 0;
 }
-
-/* ---------------- TITLES ---------------- */
 
 .sidebar_title
 {
-    color:#6b7280;
-
-    font-size:0.75rem;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    margin-bottom:1rem;
-
-    font-weight:600;
+    color: #64748b;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
-
-/* ---------------- MENUS ---------------- */
 
 .menu,
 .menu2
 {
-    display:flex;
-
-    flex-direction:column;
-
-    gap:0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
-
-/* ---------------- LINKS ---------------- */
 
 .menu a,
 .menu2 a
 {
-    text-decoration:none;
-    color:#d1d5db;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:0.9rem 1rem;
-    border-radius:12px;
-    transition:0.3s ease;
-    font-size:15px;
-    font-weight:500;
+    text-decoration: none;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 400;
 }
-
-/* ---------------- HOVER EFFECT ---------------- */
 
 .menu a:hover,
 .menu2 a:hover
 {
-    background:rgba(0,255,255,0.08);
-
-    color:#00e5ff;
-
-    transform:translateX(4px);
+    background: rgba(0,229,255,0.08);
+    color: #00e5ff;
 }
-
 
 .left_side_menu
 {
-    background:rgba(255,255,255,0.08);
-    color:white !important;
+    background: rgba(0,229,255,0.12) !important;
+    color: #00e5ff !important;
 }
-
-/* ---------------- ICONS ---------------- */
 
 .left_side_menu_span1,
 .left_side_menu_span2,
@@ -99,30 +70,22 @@
 .left_down_span4,
 .left_down_span5
 {
-    font-size:16px;
-    opacity:0.85;
+    font-size: 16px;
+    opacity: 0.9;
 }
+
 .sidebar::before
 {
-    content:"";
-    position:absolute;
-    top:0;
-    right:0;
-    width:1px;
-    height:100%;
-    background:linear-gradient(
-        to bottom,
-        transparent,
-        rgba(0,229,255,0.4),
-        transparent
-    );
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0,229,255,0.3), transparent);
 }
 
 .sidebar
 {
-    overflow-y:auto;
-}
-.left_down_span1.active
-{
-    color: var#00f0ff(--neon-cyan);
+    overflow-y: auto;
 }

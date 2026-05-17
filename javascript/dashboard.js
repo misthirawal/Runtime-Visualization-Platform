@@ -17,7 +17,35 @@ async function dashboard_load()
     await navbar_load();
     await sidebar_load(); //wait till sidebar and navbar gets load then load dashboard 
     detect_memory();
+    push_stack("main()");
+    setTimeout(() =>
+{
+    push_stack("hello()");
+}, 1000);
+
+
+
+setTimeout(() =>
+{
+    push_stack("sum()");
+}, 2000);
+
+
+
+setTimeout(() =>
+{
+    pop_stack();
+}, 3000);
+
+
+
+setTimeout(() =>
+{
+    pop_stack();
+}, 4000);
+    console.log(runtime_state);
 }
+
 window.addEventListener("load",dashboard_load);
 function detect_memory()
 {

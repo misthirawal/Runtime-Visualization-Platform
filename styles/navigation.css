@@ -4,165 +4,104 @@
     align-items: center;
     justify-content: space-between;
 }
-#nav_links
-{
-    text-decoration: none;
-    color:white;
-    text-shadow:antiquewhite 2px;
-}
-/* ---------------- NAVBAR ---------------- */
 
 #navigation_items
 {
-    width:100%;
-
-    height:80px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:0 2rem;
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
-
-    background:rgba(5,10,20,0.85);
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid rgba(255,255,255,0.06);
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8,15,30,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,229,255,0.08);
 }
-
-/* ---------------- LOGO SECTION ---------------- */
 
 #logo
 {
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
-
-/* ---------------- LOGO IMAGE ---------------- */
 
 .logo_picture img
 {
-    width:34px;
-
-    height:34px;
-
-    object-fit:contain;
-
-    filter:drop-shadow(0 0 10px rgba(0,229,255,0.45));
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0,229,255,0.4));
 }
-
-/* ---------------- LOGO TEXT ---------------- */
 
 .logo_text
 {
-    font-size:1.4rem;
-
-    font-weight:700;
-
-    color:white;
-
-    letter-spacing:1px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    letter-spacing: 0.5px;
 }
-
-/* ---------------- NAV LINKS ---------------- */
 
 #nav_links
 {
-    display:flex;
-
-    align-items:center;
-
-    gap:2rem;
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
-
-/* ---------------- NAV LINKS STYLE ---------------- */
 
 #nav_links a
 {
-    text-decoration:none;
-
-    color:#d1d5db;
-
-    font-size:15px;
-
-    font-weight:500;
-
-    transition:0.3s ease;
-
-    position:relative;
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    position: relative;
 }
-
-/* ---------------- HOVER EFFECT ---------------- */
 
 #nav_links a:hover
 {
-    color:#00e5ff;
+    color: #00e5ff;
 }
-
-/* ---------------- UNDERLINE EFFECT ---------------- */
 
 #nav_links a::after
 {
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-6px;
-
-    width:0%;
-
-    height:2px;
-
-    background:#00e5ff;
-
-    transition:0.3s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #00e5ff;
+    transition: 0.2s ease;
 }
 
 #nav_links a:hover::after
 {
-    width:100%;
+    width: 100%;
 }
-
-/* ---------------- ACTIVE LINK ---------------- */
 
 #nav_links a.active
 {
-    color:#00e5ff;
+    color: #00e5ff;
 }
 
-/* ---------------- RESPONSIVE ---------------- */
-
-@media(max-width:768px)
+@media (max-width: 768px)
 {
     #navigation_items
     {
-        flex-direction:column;
-
-        height:auto;
-
-        padding:1rem;
+        flex-direction: column;
+        height: auto;
+        padding: 12px;
     }
 
     #nav_links
     {
-        margin-top:1rem;
-
-        flex-wrap:wrap;
-
-        justify-content:center;
+        margin-top: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
     }
 }

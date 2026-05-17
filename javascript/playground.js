@@ -1,4 +1,5 @@
             //code-editor code based on user prefernece of dropdown
+let console_output=document.getElementById("console_output");
 const select=document.getElementById("header_action_1");
 const abc=document.getElementById("code_editor");
 select.addEventListener('change',()=>
@@ -70,7 +71,7 @@ const click_buton=document.getElementById("clear");
 click_buton.addEventListener("click",remove_text);
 function remove_text()
 {
-    code_editor.value='';
+    abc.value='';
 
 }
 ///adding numbering in code_editor
@@ -160,16 +161,13 @@ function detection()
                         {
                             continue;
                         }
-                        localStorage.setItem("stack_memory",JSON.stringify(stack_data));//here local storage is converting my stack_data into string to be stored in browser
-                        localStorage.setItem("heap_memory",JSON.stringify(heap_data));
-                        console_output.innerHTML=trace.join("<br>");
-
+                    }
+                    localStorage.setItem("stack_memory",JSON.stringify(stack_data));
+                    localStorage.setItem("heap_memory",JSON.stringify(heap_data));
+                    localStorage.setItem("runtime_trace", JSON.stringify(trace));
+                    console_output.innerHTML=trace.join("<br>");
                 }
-}
-let console_output=document.getElementById("console_output");
-localStorage.setItem("runtime_trace", JSON.stringify(trace));
-console.log(trace);
-console.log(localStorage.getItem("runtime_trace"));
+
 //local storage only stores string so we are converting our trace array into string
-var b= Navigator.deviceMemory;
+var b= navigator.deviceMemory;
 console.log(b);

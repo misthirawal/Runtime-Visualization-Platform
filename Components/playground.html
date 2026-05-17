@@ -1,40 +1,39 @@
+<link rel="stylesheet" href="../styles/index.css">
 <link rel="stylesheet" href="../styles/playground.css">
+<link rel="stylesheet" href="../styles/navigation.css">
 <body class="fade_in">
     <canvas id="my_canvas"></canvas>
     <div id="app_container">
         <header id="navigation_container"></header>
-            <main id="page_container">
-                <div class="hero_section">
-                    <h1>Runtime Playground</h1>
-                    <p>Write code to generate an execution trace...</p>
+        <main id="page_container">
+            <div class="hero_section">
+                <h1>Runtime Playground</h1>
+                <p>Write code to generate an execution trace...</p>
+            </div>
+            <div class="playground_header_actions">
+                <select id="header_action_1">
+                    <option value="">Load Snippet</option>
+                    <option value="Functioncall">Function call</option>
+                    <option value="Heap_Allocation">Heap Allocation</option>
+                    <option value="Recursion">Recursion</option>
+                    <option value="Control_Flow">Control Flow(LOOPS)</option>
+                    <option value="Closures">Closures</option>
+                </select>
+                <button id="run_system">Run System</button>
+                <button id="clear">Clear</button>
+            </div>
+            <div class="code_editorss">
+                <div class="code_editor_header">
+                    <span id="code_editor_text_heading">main.js</span>
                 </div>
-                <div class="playground_header_actions">
-                    <!---------------1)-------------dropdown-------------------->
-                    <select id="header_action_1">
-                        <option value="">Load Snippet</option>
-                        <option value="Functioncall">Function call</option>
-                        <option value="Heap_Allocation">Heap Allocation</option>
-                        <option value="Recursion">Recursion</option>
-                        <option value="Control_Flow">Control Flow(LOOPS)</option>
-                        <option value="Closures">Closures</option>
-                    </select>
-                    <button id="run_system">Run System</button>
-                    <button id="clear">Clear</button>
+                <div class="code_writing_space">
+                    <div id="code_editor_numbering">1</div>
+                    <div id="editor_placeholder">Start Writing Code here...</div>
+                    <textarea id="code_editor"></textarea>
                 </div>
-                <div class="code_editorss" id="coding_writing_space">
-                    <div class="code_editor_header">
-                        <span id="code_editor_text_heading">
-                            main.js
-                        </span>
-                        <div class="code_writing_space">
-                            <div id="code_editor_numbering">1</div>
-                            <div id="editor_placeholder">Start Writing Code here...</div>
-                            <textarea id="code_editor">
-                            </textarea>
-                        </div>
-                        <div id="console_output"></div>
-                    </div>
-                </div>
+            </div>
+            <div id="console_output" class="console_output"></div>
+        </main>
     </div>
-    <script src="/Runtime-Visualization-Platform/javascript/playground.js"></script>
+    <script src="../javascript/playground.js"></script>
 </body>

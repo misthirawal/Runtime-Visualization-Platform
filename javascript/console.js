@@ -1,5 +1,5 @@
-let stack_data=JSON.parse(localStorage.getItem("stack_memory"));
-let heap_data=JSON.parse(localStorage.getItem("heap_memory"));
+let stack_data=JSON.parse(localStorage.getItem("stack_memory"))||[];
+let heap_data=JSON.parse(localStorage.getItem("heap_memory"))||[];
 let stack_output=document.getElementById("stack_output");
 let div=document.createElement("div");
 div.classList.add("memory_box");

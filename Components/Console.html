@@ -4,16 +4,17 @@
     <div class="stack_memory">
         <h2>STACK MEMORY</h2>
         <div id="stack_output"></div>
+        <div id="stack_visualization"></div>
     </div>
 </div>
 <div id="heap_grid">
     </div>
-</div>
 <script>
-let trace = JSON.parse(localStorage.getItem("runtime_trace"));
-
+let trace = JSON.parse(localStorage.getItem("runtime_trace"))||[];
+if(trace.length > 0) {
 document.getElementById("console_output").innerHTML =
 trace.join("<br>");
+}
 </script>
-<script src="/Runtime-Visualization-Platform/javascript/playground.js"></script>
+<script src="../javascript/playground.js"></script>
 <script src="../javascript/console.js"></script>

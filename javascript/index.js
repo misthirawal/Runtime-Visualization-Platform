@@ -81,7 +81,7 @@ function draw()
                     Math.random() * binary.length
                 )
             );
-        ctx.fillText(texts,i*16,arr[i]);  //filltext contains (text to display,x position, y position)
+        ctx.fillText(text, i * 16, arr[i]);
         arr[i]+=font_size;
         if(arr[i] > canvas.height && Math.random()>0.975)
         {
