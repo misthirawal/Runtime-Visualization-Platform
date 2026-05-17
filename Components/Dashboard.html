@@ -1,11 +1,22 @@
 <link rel="stylesheet" href="../styles/navigation.css">
 <link rel="stylesheet" href="../styles/sidebar.css">
+<link rel="stylesheet" href="../styles/dashboard.css">
 <div id="main_page">
     <header id="navigation_container"></header>
     <div class="dashboard_layout">
         <div id="sidebar_container"></div>
         <main class="page_content">
-            <h1>hii</h1>
+            <div id="memory_popup">  <!--detecting user_memeory for dynamic changing size of stack and heap -->
+                <!--prompt for user for confirmation-->
+            <div id="memory_prompt">
+                <h2>ACCESSING SYSTEM MEMORY</h2>
+                <p id="ram_text"></p>
+                <div class="popup_buttons">
+                    <button type="button" id="detected_ram">USE DETECTED RAM</button>
+                    <button type="button" id="custom_ram_input">USE CUSTOM SIZE OF RAM</button>
+                </div>
+            </div>
+            </div>
         </main>
     </div>
     <script src="../javascript/dashboard.js"></script>

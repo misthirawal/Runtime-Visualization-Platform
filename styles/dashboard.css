@@ -1,0 +1,181 @@
+#memory_popup
+{
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+    rgba(0,0,0,0.75);
+
+    backdrop-filter: blur(6px);
+
+    z-index: 500;
+}
+
+
+
+/* MAIN BOX */
+#memory_prompt
+{
+    width: 500px;
+
+    background:
+    linear-gradient(
+    145deg,
+    #050816,
+    #0b1120
+    );
+
+    border:
+    1px solid #00ff9f;
+
+    box-shadow:
+    0px 0px 25px rgba(0,255,150,0.25);
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    color: #00ff9f;
+
+    font-family: monospace;
+
+    animation: hacker_popup 0.5s ease;
+}
+
+
+
+/* TITLE */
+#memory_prompt h2
+{
+    font-size: 32px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+    0px 0px 10px #00ff9f;
+}
+
+
+
+/* RAM TEXT */
+#ram_text
+{
+    font-size: 18px;
+
+    margin-bottom: 30px;
+
+    color: #9effd6;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* BUTTON AREA */
+.popup_buttons
+{
+    display: flex;
+
+    gap: 20px;
+
+    justify-content: center;
+}
+
+
+
+/* BUTTONS */
+.popup_buttons button
+{
+    background: transparent;
+
+    border: 1px solid #00ff9f;
+
+    color: #00ff9f;
+
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+
+/* HOVER */
+.popup_buttons button:hover
+{
+    background: #00ff9f;
+
+    color: black;
+
+    transform: scale(1.05);
+
+    box-shadow:
+    0px 0px 18px #00ff9f;
+}
+
+
+
+/* ANIMATION */
+@keyframes hacker_popup
+{
+    from
+    {
+        opacity: 0;
+
+        transform:
+        translateY(-30px)
+        scale(0.9);
+    }
+
+    to
+    {
+        opacity: 1;
+
+        transform:
+        translateY(0px)
+        scale(1);
+    }
+}
+.dashboard_layout
+{
+    display: flex;
+}
+
+
+
+#sidebar_container
+{
+    width: 320px;
+
+    min-height: 100vh;
+}
+
+
+
+.page_content
+{
+    flex: 1;
+
+    position: relative;
+
+    background: #0f172a;
+
+    overflow: hidden;
+}

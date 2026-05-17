@@ -161,7 +161,7 @@ function detection()
                             continue;
                         }
                         localStorage.setItem("stack_memory",JSON.stringify(stack_data));//here local storage is converting my stack_data into string to be stored in browser
-                        localStorage.setItem("heap_memory",JSON.stringify(heap_data));``
+                        localStorage.setItem("heap_memory",JSON.stringify(heap_data));
                         console_output.innerHTML=trace.join("<br>");
 
                 }
@@ -171,3 +171,5 @@ localStorage.setItem("runtime_trace", JSON.stringify(trace));
 console.log(trace);
 console.log(localStorage.getItem("runtime_trace"));
 //local storage only stores string so we are converting our trace array into string
+var b= Navigator.deviceMemory;
+console.log(b);
