@@ -1,4 +1,4 @@
-//code-editor code based on user prefernece of dropdown
+            //code-editor code based on user prefernece of dropdown
 const select=document.getElementById("header_action_1");
 const abc=document.getElementById("code_editor");
 select.addEventListener('change',()=>
@@ -98,3 +98,76 @@ select.addEventListener('change', () =>
 
     remove_placeholder();
 });
+
+
+//-----------------detecting code written by user------------------//
+let detect_code=document.getElementById("run_system");
+detect_code.addEventListener("click",detection);
+function detection()
+{
+    let trace=[];//will store runtime elements
+    let stack_data=[] //to seperately store all stack lines so we can show it in stack animation in console.html page
+    let heap_data=[] //to store dynamically allocated variables in heap array and to show them dyaniacally
+//loop detection code in code_editor........
+    let user_code = document.getElementById("code_editor").value;
+    let arr=["for","while","do"];
+    for(let i=0;i<arr.length;i++)
+        {
+            if(user_code.includes(arr[i]))
+                {
+                    trace.push(arr[i]+"LOOP DETECTED IN SYSTEM...");
+
+                }
+        }
+        if(user_code.includes("function"))
+        {
+            trace.push("FUNCTION IS DETECTED IN SYSTEM...");
+        }
+        if(user_code.includes("=>"))
+        {
+            trace.push("ARROW FUNCTION DETECTED");
+        }
+        let lines=user_code.split("\n");
+        for(let i=0;i<lines.length;i++)
+            {
+                let trimmed_line=lines[i].trim(); //extra spaces remove
+                //skip all empty spaces, { } to prevent them entering into stack
+                if(trimmed_line==="")
+                {
+                    continue; //to skip all those lines from classification of stack or heap..
+                }
+                if(trimmed_line.includes("[")&& trimmed_line.includes("]"))  //aray detection
+                    {
+                        console.log("ARRAY-> HEAP");
+                        heap_data.push(trimmed_line);
+                    }
+                    else if(trimmed_line.includes("function") || trimmed_line.includes("=>"))  //function detection
+                        {
+                            console.log("FUNCTION => HEAP");
+                            heap_data.push(trimmed_line);
+                        }
+                    else if(trimmed_line.includes("=")&&trimmed_line.includes("{"))  //object detection
+                        {
+                            console.log("OBJECT => HEAP");
+                            heap_data.push(trimmed_line);
+                        }
+                    else if(trimmed_line.startsWith("let")||trimmed_line.startsWith("const")||trimmed_line.startsWith("var"))
+                        {
+                            console.log("PRIMITIVE OBJECTS=> STACK");
+                            stack_data.push(trimmed_line);
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                        localStorage.setItem("stack_memory",JSON.stringify(stack_data));//here local storage is converting my stack_data into string to be stored in browser
+                        localStorage.setItem("heap_memory",JSON.stringify(heap_data));
+                        console_output.innerHTML=trace.join("<br>");
+
+                }
+}
+let console_output=document.getElementById("console_output");
+localStorage.setItem("runtime_trace", JSON.stringify(trace));
+console.log(trace);
+console.log(localStorage.getItem("runtime_trace"));
+//local storage only stores string so we are converting our trace array into string

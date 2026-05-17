@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="../styles/console.css">
+<div id="console_output"></div>
+<div class="runtime_container">
+    <div class="stack_memory">
+        <h2>STACK MEMORY</h2>
+        <div id="stack_output"></div>
+    </div>
+</div>
+<script>
+let trace = JSON.parse(localStorage.getItem("runtime_trace"));
+
+document.getElementById("console_output").innerHTML =
+trace.join("<br>");
+</script>
+<script src="/Runtime-Visualization-Platform/javascript/playground.js"></script>
+<script src="../javascript/console.js"></script>
