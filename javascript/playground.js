@@ -181,7 +181,7 @@ function runSystem()
     document.querySelector(".code_writing_space").classList.add("scanning");
     document.getElementById("console_output").innerText =
     "Analyzing Runtime...\nAllocating Memory...\nLaunching Execution Trace...";
-    setTimeout(function(){ window.location.href = "../Components/console.html";},1800);
+    setTimeout(function(){ window.location.href = "console.html";},1800);
 }
 function runSystem()
 {
