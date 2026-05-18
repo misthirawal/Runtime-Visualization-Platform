@@ -16,12 +16,11 @@ const samples={
         let result=add(5,10);
         console.log(result);`,
 
-    Control_Flow : `//-----for loop--------//
+    Control_Flow : `
     for(let i=0;i<3;i++)
     {
     console.log(i*2);
     }
-//-----while loop--------//
     while(10>0) {
     console.log("good morning sir")}
     `,
@@ -37,10 +36,7 @@ const samples={
     let myClosure = outerFunction();
     myClosure();`,
     Heap_Allocation: `let numbers=[1,2,3];
-    let user=
-    {
-    name: "Misthi"
-    };
+    let user= { name: "Misthi" };
     numbers.push(4);
     console.log(numbers);`,
     Recursion: `function factorial(n) {

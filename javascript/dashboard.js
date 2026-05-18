@@ -82,3 +82,49 @@ function detect_memory()
         document.getElementById("memory_popup").style.display = "none";
     }
 }
+
+//taking user ram input to display its contributions in overview
+
+let total_ram =Number(localStorage.getItem("user_memory"));
+if(!total_ram){total_ram = 8;}
+let heap_reserved =total_ram * 0.40;
+let stack_reserved =total_ram * 0.10;
+let os_reserved =total_ram * 0.20;
+let free_memory =total_ram -(heap_reserved + stack_reserved + os_reserved);
+document.getElementById("total_ram").innerText =total_ram.toFixed(1) + " GB";
+document.getElementById("heap_ram").innerText =heap_reserved.toFixed(1) + " GB";
+document.getElementById("stack_ram").innerText =stack_reserved.toFixed(1) + " GB";
+document.getElementById("os_ram").innerText =os_reserved.toFixed(1) + " GB";
+document.getElementById("free_ram").innerText =free_memory.toFixed(1) + " GB";
+let blocks =document.querySelectorAll(".memory_block");
+let used_memory =heap_reserved +stack_reserved +os_reserved;
+let used_percent =(used_memory / total_ram) * 100;
+let total_blocks = blocks.length;
+let active_blocks =Math.floor((used_percent / 100) * total_blocks);
+blocks.forEach(function(block){
+
+    block.classList.remove("active");
+
+});
+
+
+// animate memory filling
+
+let current = 0;
+
+let interval =
+setInterval(function(){
+
+    if(current < active_blocks)
+    {
+        blocks[current].classList.add("active");
+
+        current++;
+    }
+
+    else
+    {
+        clearInterval(interval);
+    }
+
+},120);

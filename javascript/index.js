@@ -97,3 +97,14 @@ window.addEventListener("resize", () =>
 
     canvas.height = window.innerHeight;
 });
+
+const launch_playground=document.querySelector(".primary_button");
+launch_playground.addEventListener("click",function()
+{
+    window.location.href="./Components/playground.html";
+});
+const read_the_docs=document.querySelector(".secondary_button");
+read_the_docs.addEventListener("click",function()
+{
+    window.location.href="./docs/readme.html";
+});

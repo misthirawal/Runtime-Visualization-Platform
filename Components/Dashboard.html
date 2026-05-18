@@ -17,6 +17,57 @@
                 </div>
             </div>
             </div>
+            <div class="memory_panel">
+                <div class="live_indicator"></div>
+                <div class="memory_heading">RUNTIME MEMORY MONITOR</div>
+                <div class="memory_stats">
+                    <div class="memory_row">
+                        <span>TOTAL RAM</span>
+                        <span id="total_ram">16 GB</span>
+                    </div>
+                    <div class="memory_row">
+                        <span>HEAP RESERVED</span>
+                        <span id="heap_ram">6.4 GB</span>
+                    </div>
+                    <div class="memory_row">
+                        <span>STACK RESERVED</span>
+                        <span id="stack_ram">1.6 GB</span>
+                    </div>
+                    <div class="memory_row">
+                        <span>OS RESERVED</span>
+                        <span id="os_ram">3.2 GB</span>
+                    </div>
+                    <div class="memory_row">
+                        <span>FREE MEMORY</span>
+                        <span id="free_ram">4.8 GB</span>
+                    </div>
+                </div>
+                <div class="memory_bar">
+                    <div class="memory_block active"></div>
+                    <div class="memory_block active"></div>
+                    <div class="memory_block active"></div>
+                    <div class="memory_block active"></div>
+                    <div class="memory_block active"></div>
+                    <div class="memory_block active"></div>
+                    <div class="memory_block active"></div>
+                    <div class="memory_block active"></div>
+                    <div class="memory_block"></div>
+                    <div class="memory_block"></div>
+                    <div class="memory_block"></div>
+                    <div class="memory_block"></div>
+                </div>
+                <div class="memory_labels">
+                    <span>USED</span>
+                    <span>FREE</span>
+                </div>
+                <div class="memory_addresses">
+                    <span>0x0000</span>
+                    <span>0x2000</span>
+                    <span>0x4000</span>
+                    <span>0x6000</span>
+                    <span>0x8000</span>
+                </div>
+            </div>
         </main>
     </div>
     <script src="../javascript/runtime_state.js"></script>
