@@ -173,10 +173,38 @@ let run_btn =document.getElementById("run_system");
 run_btn.addEventListener("click", runSystem);
 function runSystem()
 {
+    let user_code =document.getElementById("code_editor").value;
+    localStorage.setItem("user_code",user_code);
+    localStorage.setItem("final_output","[1,2,3,4]");
     let scanner =document.getElementById("scanner_line");
     scanner.classList.add("active");
+    document.querySelector(".code_writing_space").classList.add("scanning");
     document.getElementById("console_output").innerText =
     "Analyzing Runtime...\nAllocating Memory...\nLaunching Execution Trace...";
     setTimeout(function(){ window.location.href = "../Components/console.html";},1800);
 }
-document.querySelector(".code_writing_space").classList.add("scanning");
+function runSystem()
+{
+    let user_code =document.getElementById("code_editor").value;
+    let output_logs = [];
+    const custom_console ={
+        log: function(message)
+        {
+            output_logs.push(message);
+        }
+    };
+    try
+    {
+        new Function(
+            "console",
+            user_code
+        )(custom_console);
+    }
+    catch(error)
+    {
+        output_logs.push(
+            "Runtime Error: " + error.message
+        );}
+    localStorage.setItem("final_output", JSON.stringify(output_logs));
+    window.location.href ="console.html";
+}

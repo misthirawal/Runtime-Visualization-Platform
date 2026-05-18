@@ -65,3 +65,9 @@ function delay(ms)
     return new Promise(resolve =>
     setTimeout(resolve,ms));
 }
+setTimeout(function(){
+
+    window.location.href =
+    "timeline.html";
+
+},7000);
