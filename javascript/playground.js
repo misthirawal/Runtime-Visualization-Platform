@@ -167,3 +167,16 @@ function detection()
 //local storage only stores string so we are converting our trace array into string
 var b= navigator.deviceMemory;
 console.log(b);
+
+//scanner line 
+let run_btn =document.getElementById("run_system");
+run_btn.addEventListener("click", runSystem);
+function runSystem()
+{
+    let scanner =document.getElementById("scanner_line");
+    scanner.classList.add("active");
+    document.getElementById("console_output").innerText =
+    "Analyzing Runtime...\nAllocating Memory...\nLaunching Execution Trace...";
+    setTimeout(function(){ window.location.href = "../Components/console.html";},1800);
+}
+document.querySelector(".code_writing_space").classList.add("scanning");
